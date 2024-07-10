@@ -1766,7 +1766,7 @@ static int ecx_main_send_processdata(ecx_contextt *context, uint8 group, boolean
                if(first)
                {
                   /* FPRMW in second datagram */
-                  DCO = ecx_adddatagram(context->port, &(context->port->txbuf[idx]), EC_CMD_FRMW, idx, FALSE,
+                  DCO = ecx_adddatagram(context->port, &(context->port->txbuf[idx]), EC_CMD_BRW, idx, FALSE,
                                            context->slavelist[context->grouplist[group].DCnext].configadr,
                                            ECT_REG_DCSYSTIME, sizeof(int64), context->DCtime);
                   first = FALSE;
@@ -1804,7 +1804,7 @@ static int ecx_main_send_processdata(ecx_contextt *context, uint8 group, boolean
                if(first)
                {
                   /* FPRMW in second datagram */
-                  DCO = ecx_adddatagram(context->port, &(context->port->txbuf[idx]), EC_CMD_FRMW, idx, FALSE,
+                  DCO = ecx_adddatagram(context->port, &(context->port->txbuf[idx]), EC_CMD_BRW, idx, FALSE,
                                            context->slavelist[context->grouplist[group].DCnext].configadr,
                                            ECT_REG_DCSYSTIME, sizeof(int64), context->DCtime);
                   first = FALSE;
@@ -1845,7 +1845,7 @@ static int ecx_main_send_processdata(ecx_contextt *context, uint8 group, boolean
             if(first)
             {
                /* FPRMW in second datagram */
-               DCO = ecx_adddatagram(context->port, &(context->port->txbuf[idx]), EC_CMD_FRMW, idx, FALSE,
+               DCO = ecx_adddatagram(context->port, &(context->port->txbuf[idx]), EC_CMD_BRW, idx, FALSE,
                                         context->slavelist[context->grouplist[group].DCnext].configadr,
                                         ECT_REG_DCSYSTIME, sizeof(int64), context->DCtime);
                first = FALSE;
